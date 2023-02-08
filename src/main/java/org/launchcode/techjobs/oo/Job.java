@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+
+
 public class Job {
 
     private int id;
@@ -33,6 +35,56 @@ public class Job {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+
+
+    @Override
+    public String toString() {
+        String nameVal = getName();
+        String employerVal = employer.getValue();
+        String locationVal = location.getValue();
+        String pTVal = positionType.getValue();
+        String cCVal = getCoreCompetency().getValue();
+//        String jobString = "\n" +
+//                "ID: " + id + "\n" +
+//                "Name: " + nameVal + "\n" +
+//                "Employer: " + employerVal + "\n" +
+//                "Location: " + location.getValue() + "\n" +
+//                "Position Type: " + positionType.getValue() + "\n" +
+//                "Core Competency: " + coreCompetency.getValue() +
+//                "\n";
+
+        if (name.equals("") && employer.getValue().equals("") && location.getValue().equals("") && positionType.getValue().equals("") && coreCompetency.getValue().equals("")) {
+        return "OOPS! This job does not seem to exist.";
+        } else {
+
+            if (nameVal.equals("")) {
+                nameVal = "Data not available";
+            }
+            if (employer.getValue().equals("")) {
+                employerVal = "Data not available";
+            }
+            if (location.getValue().equals("")) {
+                locationVal = "Data not available";
+            }
+            if (positionType.getValue().equals("")) {
+                pTVal = "Data not available";
+            }
+            if (coreCompetency.getValue().equals("")) {
+                cCVal = "Data not available";
+            }
+        }
+
+        String jobString = "\n" +
+                "ID: " + id + "\n" +
+                "Name: " + nameVal + "\n" +
+                "Employer: " + employerVal + "\n" +
+                "Location: " + locationVal + "\n" +
+                "Position Type: " + pTVal + "\n" +
+                "Core Competency: " + cCVal +
+                "\n";
+
+        return jobString;
+    }
 
     @Override
     public boolean equals(Object o) {
