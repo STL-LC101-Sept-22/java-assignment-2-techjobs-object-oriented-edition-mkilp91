@@ -41,7 +41,7 @@ public class Job {
 //        NOT NEEDED: if (!(o instanceof Job)) return false;
 //        NOT NEEDED: if (((Job) o).getName() == null || ((Job) o).getEmployer() == null || ((Job) o).getLocation() == null || ((Job) o).getPositionType() == null || ((Job) o).getCoreCompetency() == null) return false;
         Job job = (Job) o;
-        if (this.getId() == ((Job) o).getId()) return true;
+        if (this.getId() == job.getId()) return true;
         return id == job.id && name.equals(job.name) && employer.equals(job.employer) && location.equals(job.location) && positionType.equals(job.positionType) && coreCompetency.equals(job.coreCompetency);
     }
 
