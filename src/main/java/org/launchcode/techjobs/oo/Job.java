@@ -43,7 +43,7 @@ public class Job {
         String employerVal = employer.getValue();
         String locationVal = location.getValue();
         String pTVal = positionType.getValue();
-        String cCVal = getCoreCompetency().getValue();
+        String cCVal = coreCompetency.getValue();
 //        String jobString = "\n" +
 //                "ID: " + id + "\n" +
 //                "Name: " + nameVal + "\n" +
@@ -100,7 +100,7 @@ public class Job {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(id);
     }
 
 
