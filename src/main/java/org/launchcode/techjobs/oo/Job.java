@@ -22,6 +22,42 @@ public class Job {
     public Job(){
         this.id = nextId;
         nextId++;
+
+        if (this.name == null) {
+            this.name = "";
+        }
+
+        if (this.employer == null){
+            this.employer = new Employer("");
+        }
+
+        if (this.employer.getValue() == null) {
+            this.employer.setValue("");
+        }
+
+        if (this.location == null){
+            this.location = new Location("");
+        }
+
+        if (this.location.getValue() == null) {
+            this.location.setValue("");
+        }
+
+        if (this.positionType == null){
+            this.positionType = new PositionType("");
+        }
+
+        if (this.positionType.getValue() == null) {
+            this.positionType.setValue("");
+        }
+
+        if (this.coreCompetency == null){
+            this.coreCompetency = new CoreCompetency("");
+        }
+
+        if (this.coreCompetency.getValue() == null) {
+            this.coreCompetency.setValue("");
+        }
     }
 
     public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency){
@@ -144,7 +180,7 @@ public class Job {
 //            }
 //        }
         if (nullCount == 5) {
-            jobString = "OOPS! This job does not seem to exist";
+            jobString = "OOPS! This job does not seem to exist.";
         } else {
             jobString = "\n" +
                     "ID: " + id + "\n" +
